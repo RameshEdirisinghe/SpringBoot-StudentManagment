@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <Style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #2980b9;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #2980b9;
+            box-shadow: 0 0 10px rgba(41, 128, 185, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3498db;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        li:hover {
+            background-color: #dfe6e9;
+        }
+
+        #search-by-id,
+        #search-by-name,
+        #delete-student {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        #student-info {
+            font-size: 1.1em;
+            color: #16a085;
+            margin-top: 10px;
+        }
+
+        #students,
+        #search-results {
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            section {
+                margin-bottom: 30px;
+            }
+
+            button {
+                padding: 12px;
+            }
+
+            input[type="text"],
+            input[type="number"],
+            select {
+                font-size: 0.9em;
+                padding: 12px;
+            }
+        }
+    </Style>
+     <div class="container">
+        <h1>Student Management</h1>
+        
+  
+        <div class="form-group">
+            <h3>Add Student</h3>
+            <input type="text" id="txtName" placeholder="Enter Name">
+            <input type="number" id="txtAge" placeholder="Enter Age">
+            <select id="txtGender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <button onclick="addStudent()">Add Student</button>
+        </div>
+
+
+        <div class="form-group">
+            <h3>Update Student</h3>
+            <input type="number" id="txtUpdateId" placeholder="Enter Student ID to Update">
+            <input type="text" id="txtUpdateName" placeholder="Enter New Name">
+            <input type="number" id="txtUpdateAge" placeholder="Enter New Age">
+            <select id="txtUpdateGender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <button onclick="updateStudent()">Update Student</button>
+        </div>
+
+        <div class="form-group">
+            <h3>Delete Student</h3>
+            <input type="number" id="txtDeleteId" placeholder="Enter Student ID to Delete">
+            <button onclick="deleteStudent()">Delete Student</button>
+        </div>
+
+
+        <div class="form-group">
+            <h3>Search by ID</h3>
+            <input type="number" id="txtSearchId" placeholder="Enter Student ID">
+            <button onclick="searchById()">Search</button>
+            <div id="studentInfo"></div>
+        </div>
+
+        <div class="form-group">
+            <h3>All Students</h3>
+            <button onclick="getAllStudents()">Get All Students</button>
+            <ul id="students"></ul>
+        </div>
+    </div>
+
+    <Script src="app.js"></Script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+
 
 @RequiredArgsConstructor
 @Service
@@ -32,9 +32,7 @@ public class StudentServiceImpl implements StudentSrvice {
         List<Student> studentList = new ArrayList<>();
         List<StudentEntity> all = studentDao.findAll();
 
-        all.forEach(studentEntity -> {
-            studentList.add(modelMapper.map(studentEntity,Student.class));
-        });
+        all.forEach(studentEntity -> studentList.add(modelMapper.map(studentEntity,Student.class)));
         return studentList;
     }
 

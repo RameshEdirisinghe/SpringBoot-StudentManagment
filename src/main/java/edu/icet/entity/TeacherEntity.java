@@ -19,8 +19,8 @@ public class TeacherEntity {
     private  Integer id;
     private String name;
     private Integer age;
+
     @Enumerated(EnumType.STRING)
     private Gender gender;
-
     private Double salary;
 }

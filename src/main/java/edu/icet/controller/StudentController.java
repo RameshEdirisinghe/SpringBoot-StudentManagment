@@ -3,7 +3,6 @@ package edu.icet.controller;
 import edu.icet.dto.Student;
 import edu.icet.service.StudentSrvice;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

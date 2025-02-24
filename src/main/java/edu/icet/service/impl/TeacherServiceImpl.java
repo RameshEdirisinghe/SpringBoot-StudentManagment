@@ -29,9 +29,7 @@ public class TeacherServiceImpl implements TeacherService {
         List<TeacherEntity> teacherEntities = teacherDao.findAll();
         List<Teacher> teachers = new ArrayList<>();
 
-        teacherEntities.forEach(teacher ->{
-           teachers.add(mapper.map(teacher,Teacher.class));
-        });
+        teacherEntities.forEach(teacher -> teachers.add(mapper.map(teacher,Teacher.class)));
         return teachers;
     }
 

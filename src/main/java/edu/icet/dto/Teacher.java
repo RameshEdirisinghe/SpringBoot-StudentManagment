@@ -1,7 +1,8 @@
-package edu.icet.entity;
+package edu.icet.dto;
 
 import edu.icet.util.Gender;
-import jakarta.persistence.*;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,15 +12,11 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Entity
-@Table(name ="Student")
-public class StudentEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Teacher {
+
     private  Integer id;
     private String name;
     private Integer age;
-
-    @Enumerated(EnumType.STRING)
     private Gender gender;
+    private Double salary;
 }

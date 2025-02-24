@@ -12,14 +12,15 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-@Table(name ="Student")
-public class StudentEntity {
+@Table(name ="Teacher")
+public class TeacherEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Integer id;
     private String name;
     private Integer age;
-
     @Enumerated(EnumType.STRING)
     private Gender gender;
+
+    private Double salary;
 }
